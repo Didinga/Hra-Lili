@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dobrodružství</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="scene-body"
+      style="background-image: url('{{ url_for('static', filename=scene.background) }}');">
+
+    <!-- Přechod a blikající světélka -->
+    <div id="transition-overlay"></div>
+    <div id="sparkles-container"></div>
+
+    <!-- Obsah scény -->
+    <div class="overlay-content">
+        <h2>{{ scene.text }}</h2>
+
+        <form method="post" id="sceneForm">
+            {% for choice in scene.choices %}
+            <button type="submit" name="next" value="{{ choice.next }}">
+                {{ choice.text }}
+            </button>
+            {% endfor %}
+        </form>
+    </div>
+
+    <!-- Hudba -->
+    <audio id="bg-music" loop>
+        <source src="{{ url_for('static', filename='audio/fantasy.mp3') }}" type="audio/mpeg">
+    </audio>
+
+    <script src="{{ url_for('static', filename='transition.js') }}"></script>
+</body>
+</html>
