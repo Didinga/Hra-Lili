@@ -47,12 +47,12 @@ Then open your browser at `http://localhost:5000`
 
 ```
 Hra-Lili/
-â”śâ”€â”€ app.py              # Flask app and story scenes
-â”śâ”€â”€ templates/
-â”‚   â”śâ”€â”€ index.html      # Start screen
-â”‚   â””â”€â”€ scene.html      # Game screen
-â””â”€â”€ static/
-    â””â”€â”€ images/         # Scene background images
+  app.py              - Flask app and story scenes
+  templates/
+    index.html        - Start screen
+    scene.html        - Game screen
+  static/
+    images/           - Scene background images
 ```
 
 ---
